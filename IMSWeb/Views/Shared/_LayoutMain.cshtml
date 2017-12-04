@@ -65,7 +65,12 @@
             </div>
         </div>
     </section>
-    @Scripts.Render("~/bundles/sitejs")
+    <script src="@Url.Content("~/plugins/jquery-validation/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/plugins/jquery/jquery.min.js")"></script>
+    <script src="@Url.Content("~/plugins/bootstrap/js/bootstrap.js")"></script>
+    <script src="@Url.Content("~/plugins/bootstrap-select/js/bootstrap-select.js")"></script>
+    <script src="@Url.Content("~/plugins/jquery-slimscroll/jquery.slimscroll.js")"></script>
+    <script src="@Url.Content("~/plugins/node-waves/waves.js")"></script>
     @RenderSection("scripts", required: false)
 
 </body>
