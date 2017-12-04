@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMSWeb", "IMSWeb\IMSWeb.csproj", "{55D6A13F-4A55-4146-8967-97B0ABDFCBAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMSWeb.Core", "IMSWeb.Core\IMSWeb.Core.csproj", "{EAB92F83-141D-4DA7-A69C-65FAB5522043}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +17,16 @@ Global
 		{55D6A13F-4A55-4146-8967-97B0ABDFCBAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55D6A13F-4A55-4146-8967-97B0ABDFCBAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55D6A13F-4A55-4146-8967-97B0ABDFCBAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 		SolutionGuid = {902789F8-6C58-4F66-8AE1-58D26F265978}
 	EndGlobalSection
 EndGlobal

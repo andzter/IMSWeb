@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Sign In RAR</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/plugins/bootstrap/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/plugins/node-waves/waves.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/plugins/animate-css/animate.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("Styles", false)
+
+</head>
+<body class="login-page">
+    <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);">RAR<b>Reports</b></a>
+            <small>R</small>
+        </div>
+        <div class="card">
+            <div class="body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/sitejs")
+    @RenderSection("scripts", required: false)
+    <asp:Script runat="server" Source="~/Scripts/sign-in.js" />
+</body>
+</html>

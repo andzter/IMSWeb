@@ -15,11 +15,26 @@ namespace IMSWeb
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-           // GlobalConfiguration.MessageHandler
+            // GlobalConfiguration.MessageHandler
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Session_Start()
+        {
+            Session["logError"] = 0;
+            Session["logPassword"] = 0;
+            Session["UserRole"] = "";
+            Response.Redirect(@"~\Login");
+        }
+
+        protected void Session_End()
+        {
+            
+        }
+
+
     }
 }

@@ -23,6 +23,17 @@ namespace IMSWeb
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+ 
+
+            bundles.Add(new ScriptBundle("~/bundles/sitejs").Include(
+                      "~/plugins/jquery/jquery.min.js",
+                      "~/plugins/bootstrap/js/bootstrap.js",
+                      "~/plugins/bootstrap-select/js/bootstrap-select.js",
+                      "~/plugins/jquery-slimscroll/jquery.slimscroll.js",
+                      "~/plugins/node-waves/waves.js",
+                      "~/plugins/jquery-validation/jquery.validate.js",
+                      "~/Scripts/admin.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
