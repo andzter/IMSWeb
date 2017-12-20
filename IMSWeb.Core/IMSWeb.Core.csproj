@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,16 +53,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDataContext.cs" />
+    <Compile Include="ClientData.cs" />
     <Compile Include="DataHelper.cs" />
     <Compile Include="Extension\DataRow.cs" />
     <Compile Include="Extension\DataTable.cs" />
     <Compile Include="Extension\Datetime.cs" />
+    <Compile Include="Extension\ExtensionUtility.cs" />
     <Compile Include="Extension\String.cs" />
     <Compile Include="FileDownloadResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IMS.Models\IMS.Models.csproj">
+      <Project>{94bfdd9c-0e18-432e-b117-52bc8de720f0}</Project>
+      <Name>IMS.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

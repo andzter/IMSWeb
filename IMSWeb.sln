@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMSWeb", "IMSWeb\IMSWeb.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMSWeb.Core", "IMSWeb.Core\IMSWeb.Core.csproj", "{EAB92F83-141D-4DA7-A69C-65FAB5522043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMS.Lib", "IMS.Lib\IMS.Lib.csproj", "{B13FB030-9B40-4D0F-9A78-265A1A322D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMS.Models", "IMS.Models\IMS.Models.csproj", "{94BFDD9C-0E18-432E-B117-52BC8DE720F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +25,20 @@ Global
 		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAB92F83-141D-4DA7-A69C-65FAB5522043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13FB030-9B40-4D0F-9A78-265A1A322D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13FB030-9B40-4D0F-9A78-265A1A322D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13FB030-9B40-4D0F-9A78-265A1A322D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13FB030-9B40-4D0F-9A78-265A1A322D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94BFDD9C-0E18-432E-B117-52BC8DE720F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94BFDD9C-0E18-432E-B117-52BC8DE720F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94BFDD9C-0E18-432E-B117-52BC8DE720F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94BFDD9C-0E18-432E-B117-52BC8DE720F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 		SolutionGuid = {902789F8-6C58-4F66-8AE1-58D26F265978}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

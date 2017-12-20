@@ -23,10 +23,6 @@ namespace IMSWeb.Controllers
                 if (Session["logError"].ToString().Equals("1"))
                     ModelState.AddModelError("UserName", "The user name or password provided is incorrect.");
 
-            if (Session["logPassword"] != null)
-                if (Session["logPassword"].ToString().Equals("1"))
-                    ModelState.AddModelError("UserName", "Password would be send!");
-
             return View();
         }
 

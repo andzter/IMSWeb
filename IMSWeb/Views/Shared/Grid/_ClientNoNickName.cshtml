@@ -1,0 +1,57 @@
+﻿@using Kendo.Mvc.UI;
+
+@Html.Partial("_GridStyle")
+
+@(Html.Kendo().Grid<IMS.Models.Client>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.ClientName).Width(100);
+            columns.Bound(p => p.ClientType).Filterable(ftb => ftb.Multi(true).Search(true)).Width(100);
+            columns.Bound(p => p.DateofBirth).Format("{0:MM/dd/yyyy}").Width(120);
+            columns.Bound(p => p.OfficeAddress).Width(100);
+            columns.Bound(p => p.HomeAddress).Width(100);
+            columns.Bound(p => p.MailingAddress).Filterable(ftb => ftb.Multi(true).Search(true)).Width(100);
+
+        })
+        .ToolBar(tools => { tools.Excel(); })
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .Filterable()
+        .Excel(excel => excel
+             .FileName("Codes.xlsx")
+             .Filterable(false)
+             .ProxyURL(Url.Action("Excel_Export_Save", "ClientReport"))
+        )
+        .HtmlAttributes(new { style = "height:550px;" })
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(WebApiConfig.PageSize())
+            .Events(events => events.Error("error_handler"))
+            .Read(read => read.Action("GetNoNicknames", "ClientReport"))
+        )
+
+        .Resizable(resize => resize.Columns(true))
+        .Reorderable(reorder => reorder.Columns(true))
+        .Events(e => e.Edit("onEdit"))
+)
+
+
+<script type="text/javascript">
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+</script>

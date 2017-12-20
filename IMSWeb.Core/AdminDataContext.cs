@@ -10,7 +10,8 @@ namespace IMSWeb.Core
     {
         public static int LoginUser(string user, string password)
         {
-            return 1;
+            return int.Parse((new DataHelper()).ExecSQLScalarSP("usp_userlogin", user, password).ToString());
+             
         }
     }
 }

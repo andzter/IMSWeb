@@ -14,6 +14,11 @@
     <link href="@Url.Content("~/plugins/animate-css/animate.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/themes/all-themes.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/kendo/kendo.common-material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/kendo/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/kendo/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/kendo/kendo.material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/css/kendo/kendo.dataviz.material.min.css")" rel="stylesheet" type="text/css" />
     @RenderSection("Styles", false)
 </head>
 <body class="theme-red">
@@ -66,15 +71,17 @@
         </div>
     </section>
 
-    
-    <script src="/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="/plugins/bootstrap/js/bootstrap.js"></script>
     <script src="/plugins/bootstrap-select/js/bootstrap-select.js"></script>
     <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="/plugins/node-waves/waves.js"></script>
     <script src="/Scripts/admin.js"></script>
-
+    <script src="/Scripts/kendo/kendo.all.min.js"></script>
+    <script src="/Scripts/kendo/kendo.aspnetmvc.min.js"></script>
+    <script src="/Scripts/kendo/jszip.min.js"></script>
+    <script src="/Scripts/kendo/kendo.modernizr.custom.js"></script>
     @RenderSection("scripts", required: false)
 
 </body>
