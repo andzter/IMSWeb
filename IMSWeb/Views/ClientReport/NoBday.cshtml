@@ -8,23 +8,23 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    Clients with no nicknames
+                    Clients with no birthdays
                 </h2>
             </div>
             <div class="body table-responsive">
 
                 @Html.Partial("_MVCGridToolbar", new MVCGridToolbarModel()
            {
-               MVCGridName = "TestGrid",
+               MVCGridName = "NoBday",
                PageSize = true,
                ColumnVisibility = true,
                Export = true,
                GlobalSearch = true
            })
-                @Html.MVCGrid("TestGrid")
+                @Html.MVCGrid("NoBday")
             </div>
         </div>
- 
+
     </div>
 
 

@@ -14,11 +14,8 @@
     <link href="@Url.Content("~/plugins/animate-css/animate.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/css/themes/all-themes.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/css/kendo/kendo.common-material.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/css/kendo/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/css/kendo/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/css/kendo/kendo.material.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/css/kendo/kendo.dataviz.material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/sh/shCore.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/sh/shThemeDefault.css")" rel="stylesheet" />
     @RenderSection("Styles", false)
 </head>
 <body class="theme-red">
@@ -78,10 +75,13 @@
     <script src="/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="/plugins/node-waves/waves.js"></script>
     <script src="/Scripts/admin.js"></script>
-    <script src="/Scripts/kendo/kendo.all.min.js"></script>
-    <script src="/Scripts/kendo/kendo.aspnetmvc.min.js"></script>
-    <script src="/Scripts/kendo/jszip.min.js"></script>
-    <script src="/Scripts/kendo/kendo.modernizr.custom.js"></script>
+    <script src="~/MVCGridHandler.axd/script.js"></script>
+    <script src="~/Content/sh/shCore.js"></script>
+    <script src="~/Content/sh/shBrushJScript.js"></script>
+    <script src="~/Content/sh/shBrushCSharp.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
     @RenderSection("scripts", required: false)
 
 </body>

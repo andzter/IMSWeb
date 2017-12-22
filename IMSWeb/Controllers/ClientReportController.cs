@@ -17,6 +17,18 @@ namespace IMSWeb.Controllers
             return View();
         }
 
+        public ActionResult NoBday()
+        {
+            return View();
+        }
+
+        public ActionResult Bday()
+        {
+            return View();
+        }
+
+
+
         [HttpGet]
         public ActionResult GetNoNicknames([DataSourceRequest]DataSourceRequest request)
         {

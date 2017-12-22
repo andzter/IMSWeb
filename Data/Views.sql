@@ -5,16 +5,18 @@ IF OBJECT_ID('vw_client', 'V') IS NOT NULL
     DROP VIEW vw_client;
 GO
 
+-- select * from vw_client
+
 create view vw_client
 AS
   select c.client_id as Clientid, title,last_name as LastName , 
-      first_name as FirstName, middle_name as MiddleName, nickname, 
+      first_name as FirstName, middle_name as MiddleName, NickName, 
       CASE client_type
          WHEN '1' THEN ltrim(isnull(last_name,'') + ', ' + isnull(first_name,'') + ' ' + isnull(middle_name,''))
          WHEN '2' THEN last_name
           
-      END as clientname,
-    client_type , r.description as clienttype, office_name, 
+      END as ClientName,
+    client_type , r.description as ClientType, office_name, 
     isnull(office_building,'') + ' ' + isnull(office_street,'')  + ' ' + isnull(Office_Village,'') + ' ' + isnull(Office_City,'') + ' ' + isnull(Office_Zip,'') as OfficeAddress,
     isnull(home_street,'')  + ' ' + isnull(home_Village,'') + ' ' + isnull(home_City,'') + ' ' + isnull(Home_Zip,'') as HomeAddress,
     mailing_address,
@@ -25,7 +27,8 @@ AS
     date_of_birth as DateofBirth,
     isnull(Month(date_of_birth),0) as BirthMonth,
     isnull(Day(date_of_birth),0) as Bday,
-     isnull(FLOOR(DATEDIFF(DAY, date_of_birth, getdate() ) / 365.25),0) as Age,
+     cast (isnull(FLOOR(DATEDIFF(DAY, date_of_birth, getdate() ) / 365.25),0)  as varchar(10))as ClientAge
+	 ,
     --cNo.ContactNo, 
 	Referred_by as ReferredBy, Notes, Mobile, Phone, Email,  
      
@@ -47,5 +50,38 @@ GO
 create view vwRepClientNoNicknames
 AS
   select * from vw_client where ISNULL(nickname,'') = ''
+
+GO
+
+
+IF OBJECT_ID('vwRepClientNoBirthdays', 'V') IS NOT NULL
+    DROP VIEW vwRepClientNoBirthdays;
+GO
+
+
+create view vwRepClientNoBirthdays
+AS
+  select * from vw_client where ISNULL(DateofBirth,'') = ''
+
+GO 
+
+--select date_of_birth from client
+
+update client
+set date_of_birth = null
+where isnull(date_of_birth,'') = ''
+GO
+
+
+IF OBJECT_ID('uspClientBday', 'P') IS NOT NULL
+    DROP Procedure uspClientBday;
+GO
+
+Create procedure uspClientBday
+  @mon int
+AS
+
+   select * from vw_client
+     where BirthMonth = @mon
 
 GO

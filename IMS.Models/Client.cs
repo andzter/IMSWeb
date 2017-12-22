@@ -11,10 +11,11 @@ namespace IMS.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
-        public string Nickname { get; set; }
+        public string NickName { get; set; }
         public string ClientType { get; set; }
         public string Title { get; set; }
         public DateTime DateofBirth { get; set; }
+        public string ClientAge { get; set; }
         public string OfficeAddress { get; set; }
         public string HomeAddress { get; set; }
         public string MailingAddress { get; set; }
@@ -31,8 +32,8 @@ namespace IMS.Models
         public string Account { get; set; }
         public string ContactOf { get; set; }
         public string Notes { get; set; }
-        public string mobile { get; set; }
-        public string phone { get; set; }
+        public string Mobile { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
 
     }

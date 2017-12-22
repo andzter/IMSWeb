@@ -9,6 +9,17 @@ namespace IMSWeb.Core
 {
     public static class ClientData
     {
+
+        public static IQueryable<Client> NoRecord()
+        {
+
+            IEnumerable<Client> myEnumerable =
+              new DataHelper().GetDataTable("select top 1 * from vw_Client").ToList<Client>();
+
+            return myEnumerable.AsQueryable();
+
+        }
+
         public static IQueryable<Client> NoNicknames()
         {
 
@@ -24,6 +35,16 @@ namespace IMSWeb.Core
 
             IEnumerable<Client> myEnumerable =
               new DataHelper().GetDataTable("select * from vwRepClientNoBirthdays").ToList<Client>();
+
+            return myEnumerable.AsQueryable();
+
+        }
+
+        public static IQueryable<Client> BirthMonth(int month)
+        {
+
+            IEnumerable<Client> myEnumerable =
+              new DataHelper().GetDataTable("uspClientBday", month).ToList<Client>();
 
             return myEnumerable.AsQueryable();
 
