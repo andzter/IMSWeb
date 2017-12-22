@@ -71,6 +71,26 @@ namespace IMSWeb.Core.Repository.Impl
             return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "WithMobile");
         }
 
+        public IEnumerable<Client> GetWithMobileBday(out int totalRecords, string globalSearch, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, globalSearch, null, limitOffset, limitRowCount, orderBy, desc, "WithMobileBday");
+        }
+
+        public IEnumerable<Client> GetWithMobileBday(out int totalRecords, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "WithMobileBday");
+        }
+
+        public IEnumerable<Client> GetWithMobileEmail(out int totalRecords, string globalSearch, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, globalSearch, null, limitOffset, limitRowCount, orderBy, desc, "WithMobileEmail");
+        }
+
+        public IEnumerable<Client> GetWithMobileEmail(out int totalRecords, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "WithMobileEmail");
+        }
+
 
         public IEnumerable<Client> GetData(out int totalRecords, string globalSearch, bool? filterActive, int? limitOffset, int? limitRowCount, string orderBy, bool desc, string reptype)
         {
@@ -87,6 +107,10 @@ namespace IMSWeb.Core.Repository.Impl
                 query = ClientData.NoMobileWithEmail();
             else if (reptype.Equals("WithMobile"))
                 query = ClientData.WithMobile();
+            else if (reptype.Equals("WithMobileBday"))
+                query = ClientData.WithMobileBday();
+            else if (reptype.Equals("WithMobileEmail"))
+                query = ClientData.WithMobileEmail();
             else
             {
                 

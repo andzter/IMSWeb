@@ -86,6 +86,7 @@ GO
 create view vwRepClientwithMobile
 AS
   select * from vw_client where ISNULL(Mobile,'') <> ''
+     and isnull(Nickname,'') = ''
 
 GO 
 
@@ -102,7 +103,30 @@ AS
 
 GO 
 
-select * from vwRepClientwithMobile
+IF OBJECT_ID('vwRepClientwithMobileBday', 'V') IS NOT NULL
+    DROP VIEW vwRepClientwithMobileBday
+GO
+
+
+create view vwRepClientwithMobileBday
+AS
+  select * from vw_client where ISNULL(Mobile,'') <> ''
+     and isnull(DateOfBirth,'') = '' 
+GO 
+
+
+
+IF OBJECT_ID('vwRepClientwithMobileEmail', 'V') IS NOT NULL
+    DROP VIEW vwRepClientwithMobileEmail
+GO
+
+
+create view vwRepClientwithMobileEmail
+AS
+  select * from vw_client where ISNULL(Mobile,'') <> ''
+     and isnull(Email,'') = '' 
+GO 
+
 
 --select date_of_birth from client
 /*

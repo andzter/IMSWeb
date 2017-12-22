@@ -9,20 +9,20 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    Clients with mobile no Nickname
+                    Clients with mobile no Email
                 </h2>
             </div>
             <div class="body table-responsive">
 
                 @Html.Partial("_MVCGridToolbar", new MVCGridToolbarModel()
            {
-               MVCGridName = "WithMobile",
+               MVCGridName = "WithMobileEmail",
                PageSize = true,
                ColumnVisibility = true,
                Export = true,
                GlobalSearch = true
            })
-                @Html.MVCGrid("WithMobile")
+                @Html.MVCGrid("WithMobileEmail")
             </div>
         </div>
 

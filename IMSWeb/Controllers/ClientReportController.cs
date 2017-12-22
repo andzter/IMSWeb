@@ -42,6 +42,15 @@ namespace IMSWeb.Controllers
             return View();
         }
 
+        public ActionResult WithMobileBday()
+        {
+            return View();
+        }
+
+        public ActionResult WithMobileEmail()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult GetNoNicknames([DataSourceRequest]DataSourceRequest request)
         {
