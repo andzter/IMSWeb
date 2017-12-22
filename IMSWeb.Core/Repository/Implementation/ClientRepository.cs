@@ -40,7 +40,37 @@ namespace IMSWeb.Core.Repository.Impl
         {
             return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "bday-" + month.ToString());
         }
- 
+
+        public IEnumerable<Client> GetNoMobile(out int totalRecords, string globalSearch, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, globalSearch, null, limitOffset, limitRowCount, orderBy, desc, "NoMobile");
+        }
+
+        public IEnumerable<Client> GetNoMobile(out int totalRecords, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "NoMobile");
+        }
+
+        public IEnumerable<Client> GetNoMobileWithEmail(out int totalRecords, string globalSearch, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, globalSearch, null, limitOffset, limitRowCount, orderBy, desc, "NoMobileWithEmail");
+        }
+
+        public IEnumerable<Client> GetNoMobileWithEmail(out int totalRecords, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "NoMobileWithEmail");
+        }
+
+        public IEnumerable<Client> GetWithMobile(out int totalRecords, string globalSearch, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, globalSearch, null, limitOffset, limitRowCount, orderBy, desc, "WithMobile");
+        }
+
+        public IEnumerable<Client> GetWithMobile(out int totalRecords, int? limitOffset, int? limitRowCount, string orderBy, bool desc)
+        {
+            return GetData(out totalRecords, null, null, limitOffset, limitRowCount, orderBy, desc, "WithMobile");
+        }
+
 
         public IEnumerable<Client> GetData(out int totalRecords, string globalSearch, bool? filterActive, int? limitOffset, int? limitRowCount, string orderBy, bool desc, string reptype)
         {
@@ -51,6 +81,12 @@ namespace IMSWeb.Core.Repository.Impl
                 query = ClientData.NoNicknames();
             else if (reptype.Equals("NoBirthday"))
                 query = ClientData.NoBirthdays();
+            else if (reptype.Equals("NoMobile"))
+                query = ClientData.NoMobile();
+            else if (reptype.Equals("NoMobileWithEmail"))
+                query = ClientData.NoMobileWithEmail();
+            else if (reptype.Equals("WithMobile"))
+                query = ClientData.WithMobile();
             else
             {
                 

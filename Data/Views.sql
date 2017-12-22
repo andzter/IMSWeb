@@ -65,13 +65,52 @@ AS
 
 GO 
 
---select date_of_birth from client
 
+IF OBJECT_ID('vwRepClientNoMobile', 'V') IS NOT NULL
+    DROP VIEW vwRepClientNoMobile;
+GO
+
+
+create view vwRepClientNoMobile
+AS
+  select * from vw_client where ISNULL(Mobile,'') = ''
+
+GO 
+
+
+IF OBJECT_ID('vwRepClientwithMobile', 'V') IS NOT NULL
+    DROP VIEW vwRepClientwithMobile
+GO
+
+
+create view vwRepClientwithMobile
+AS
+  select * from vw_client where ISNULL(Mobile,'') <> ''
+
+GO 
+
+
+IF OBJECT_ID('vwRepClientNoMobileWithEmail', 'V') IS NOT NULL
+    DROP VIEW vwRepClientNoMobileWithEmail
+GO
+
+
+create view vwRepClientNoMobileWithEmail
+AS
+  select * from vw_client where ISNULL(Mobile,'') = ''
+    and isnull(email,'') <> ''
+
+GO 
+
+select * from vwRepClientwithMobile
+
+--select date_of_birth from client
+/*
 update client
 set date_of_birth = null
 where isnull(date_of_birth,'') = ''
 GO
-
+*/
 
 IF OBJECT_ID('uspClientBday', 'P') IS NOT NULL
     DROP Procedure uspClientBday;

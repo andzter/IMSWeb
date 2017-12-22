@@ -49,5 +49,43 @@ namespace IMSWeb.Core
             return myEnumerable.AsQueryable();
 
         }
+
+
+        public static IQueryable<Client> NoMobile()
+        {
+
+            IEnumerable<Client> myEnumerable =
+              new DataHelper().GetDataTable("select * from vwRepClientNoMobile").ToList<Client>();
+
+            return myEnumerable.AsQueryable();
+
+        }
+
+
+        public static IQueryable<Client> WithMobile()
+        {
+
+            IEnumerable<Client> myEnumerable =
+              new DataHelper().GetDataTable("select * from vwRepClientwithMobile").ToList<Client>();
+
+            return myEnumerable.AsQueryable();
+
+        }
+
+        public static IQueryable<Client> NoMobileWithEmail()
+        {
+
+            IEnumerable<Client> myEnumerable =
+              new DataHelper().GetDataTable("select * from vwRepClientNoMobileWithEmail").ToList<Client>();
+
+            return myEnumerable.AsQueryable();
+
+        }
+
+        //vwRepClientNoMobile
+
+        //vwRepClientwithMobile
+
+        //vwRepClientNoMobileWithEmail
     }
 }

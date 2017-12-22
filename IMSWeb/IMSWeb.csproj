@@ -493,6 +493,9 @@
     <Content Include="Views\Shared\_MVCGridToolbar.cshtml" />
     <Content Include="Views\ClientReport\NoBday.cshtml" />
     <Content Include="Views\ClientReport\Bday.cshtml" />
+    <Content Include="Views\ClientReport\NoMobile.cshtml" />
+    <Content Include="Views\ClientReport\WithMobile.cshtml" />
+    <Content Include="Views\ClientReport\NoMobileWithEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

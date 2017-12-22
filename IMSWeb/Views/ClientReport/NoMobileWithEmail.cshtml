@@ -1,0 +1,33 @@
+﻿
+@using MVCGrid.Web
+@using IMSWeb.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    Clients with no mobile with email
+                </h2>
+            </div>
+            <div class="body table-responsive">
+
+                @Html.Partial("_MVCGridToolbar", new MVCGridToolbarModel()
+           {
+               MVCGridName = "NoMobileWithEmail",
+               PageSize = true,
+               ColumnVisibility = true,
+               Export = true,
+               GlobalSearch = true
+           })
+                @Html.MVCGrid("NoMobileWithEmail")
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
